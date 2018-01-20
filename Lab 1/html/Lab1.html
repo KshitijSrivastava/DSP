@@ -1,0 +1,182 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Kshitij Srivastava, 1510110200</title><meta name="generator" content="MATLAB 8.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-08"><meta name="DC.source" content="Lab1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Kshitij Srivastava, 1510110200</h1><!--introduction--><!--/introduction--><pre class="codeinput">[y, fs]=audioread(<span class="string">'Signal_Processing_Audio.mp3'</span>);
+y_n=y(:,1);
+t=0:1/fs:2;
+sz = size(y_n);
+sx = size(t);
+isvector(y_n);
+ismatrix(y_n);
+y_t=y_n(1:88201);
+plot(t,y_t);
+
+[m, n]=size(y_t);
+Y=reshape(y_t,[m,n]);
+audiowrite(<span class="string">'output_sound.wav'</span>,Y,fs);
+sound(Y, fs);
+</pre><img vspace="5" hspace="5" src="Lab1_01.png" alt=""> <pre class="codeinput">IMG = imread(<span class="string">'RGB_Image.jpg'</span>);
+redImage = IMG(:,:,1);
+greenImage=IMG(:,:,2);
+blueImage=IMG(:,:,3);
+imshow(redImage);
+imshow(greenImage);
+imshow(blueImage);
+I = rgb2gray(IMG);
+imshow(I);
+MAT=reshape(IMG,1,[]);
+isvector(MAT);
+REIMG=imresize(IMG, 0.5);
+imshow(REIMG);
+</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <pre class="codeinput">V = VideoReader(<span class="string">'Signal_Processing_Video.mp4'</span>);
+t_a=0:1/fs:2;
+NEWV = VideoWriter(<span class="string">'new_video.avi'</span>);
+open(NEWV)
+writeVideo(NEWV,rand(300))
+close(NEWV)
+</pre><pre class="codeinput">[num, str]=xlsread(<span class="string">'Text_Data.xlsx'</span>);
+STR_ARR=char(str);
+ASCII_STR=double(STR_ARR);
+[a, b]=size(ASCII_STR);
+MAT_STR = reshape(ASCII_STR,[143,3]);
+image(MAT_STR);
+</pre><img vspace="5" hspace="5" src="Lab1_03.png" alt=""> <pre class="codeinput">[AUD, fs]=audioread(<span class="string">'output_sound.wav'</span>);
+AUD_ARR=num2str(AUD);
+AUD_CHAR=char(AUD_ARR);
+AUD_DOB=double(AUD_CHAR);
+image(AUD_DOB);
+</pre><img vspace="5" hspace="5" src="Lab1_04.png" alt=""> <pre class="codeinput">[SAM, fs]=audioread(<span class="string">'output_sound.wav'</span>);
+SAM_FLOOR=floor(SAM);
+SAM_CEIL=ceil(SAM);
+SAM_ROUND=round(SAM);
+FLOOR_ERROR=SAM-SAM_FLOOR;
+CEIL_ERROR=SAM-SAM_CEIL;
+ROUND_ERROR=SAM-SAM_ROUND;
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Kshitij Srivastava, 1510110200
+%%
+[y, fs]=audioread('Signal_Processing_Audio.mp3');
+y_n=y(:,1);
+t=0:1/fs:2;
+sz = size(y_n);
+sx = size(t);
+isvector(y_n);
+ismatrix(y_n);
+y_t=y_n(1:88201);
+plot(t,y_t);
+
+[m, n]=size(y_t);
+Y=reshape(y_t,[m,n]);
+audiowrite('output_sound.wav',Y,fs);
+sound(Y, fs);
+%%
+IMG = imread('RGB_Image.jpg');
+redImage = IMG(:,:,1);
+greenImage=IMG(:,:,2);
+blueImage=IMG(:,:,3);
+imshow(redImage);
+imshow(greenImage);
+imshow(blueImage);
+I = rgb2gray(IMG);
+imshow(I);
+MAT=reshape(IMG,1,[]);
+isvector(MAT);
+REIMG=imresize(IMG, 0.5);
+imshow(REIMG);
+%%
+V = VideoReader('Signal_Processing_Video.mp4');
+t_a=0:1/fs:2;
+NEWV = VideoWriter('new_video.avi');
+open(NEWV)
+writeVideo(NEWV,rand(300))
+close(NEWV)
+%%
+[num, str]=xlsread('Text_Data.xlsx');
+STR_ARR=char(str);
+ASCII_STR=double(STR_ARR);
+[a, b]=size(ASCII_STR);
+MAT_STR = reshape(ASCII_STR,[143,3]);
+image(MAT_STR);
+%%
+[AUD, fs]=audioread('output_sound.wav');
+AUD_ARR=num2str(AUD);
+AUD_CHAR=char(AUD_ARR);
+AUD_DOB=double(AUD_CHAR);
+image(AUD_DOB);
+%%
+[SAM, fs]=audioread('output_sound.wav');
+SAM_FLOOR=floor(SAM);
+SAM_CEIL=ceil(SAM);
+SAM_ROUND=round(SAM);
+FLOOR_ERROR=SAM-SAM_FLOOR;
+CEIL_ERROR=SAM-SAM_CEIL;
+ROUND_ERROR=SAM-SAM_ROUND;
+
+##### SOURCE END #####
+--></body></html>
